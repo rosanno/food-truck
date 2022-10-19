@@ -1,0 +1,41 @@
+<table class="w-full border border-[#eeeeee] mt-4 rounded-md px-4">
+  <tr>
+    <td colspan="5" class="py-4 px-4">
+      <h3>Order Items:</h3>
+    </td>
+  </tr>
+  <tr *ngFor="let item of order.items">
+    <td class="px-4 py-2">
+      <a routerLink="/food/{{ item.food.id }}">
+        <img
+          [src]="item.food.imageUrl"
+          alt=""
+          class="w-[90px] h-[90px] object-cover"
+        />
+      </a>
+    </td>
+    <td class="px-4">
+      {{ item.food.name }}
+    </td>
+    <td class="px-4">
+      {{ item.food.price | currency }}
+    </td>
+    <td class="px-4">
+      {{ item.quantity }}
+    </td>
+    <td class="px-4">
+      {{ item.price | currency }}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td class="py-4 px-4">
+      <strong> Total: </strong>
+    </td>
+    <td class="px-4">
+      <strong>
+        {{ order.totalPrice | currency }}
+      </strong>
+    </td>
+  </tr>
+</table>

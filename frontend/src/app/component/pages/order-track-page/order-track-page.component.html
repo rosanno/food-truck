@@ -1,0 +1,33 @@
+<div class="flex justify-between items-center gap-10">
+  <div *ngIf="order">
+    <h1 class="text-3xl">Order #{{ order.id }}</h1>
+    <div class="mt-8">
+      <div class="details">
+        <strong class="inline-block w-1/4">Date</strong>
+        {{ order.createdAt | date: "medium" }}
+      </div>
+      <div class="details">
+        <strong class="inline-block w-1/4">Name</strong> {{ order.name }}
+      </div>
+      <div class="details">
+        <strong class="inline-block w-1/4">Address</strong> {{ order.address }}
+      </div>
+      <div class="details">
+        <strong class="inline-block w-1/4">Status</strong> {{ order.status }}
+      </div>
+      <div *ngIf="order.paymentId">
+        <strong class="inline-block w-1/4">Payment ID</strong>
+        {{ order.paymentId }}
+      </div>
+    </div>
+
+    <div class="mt-7">
+      <order-items-list [order]="order"></order-items-list>
+    </div>
+  </div>
+
+  <div>
+    <app-title title="Shipping Address"></app-title>
+    <map [order]="order" [readonly]="true"></map>
+  </div>
+</div>

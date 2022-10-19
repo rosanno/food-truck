@@ -1,0 +1,33 @@
+<header class="bg-white">
+  <div class="flex justify-between items-center px-8 md:px-10 lg:px-16 py-5">
+    <div>
+      <a routerLink="/" class="uppercase font-bold text-red-400">food truck</a>
+    </div>
+    <nav>
+      <ul class="flex items-center gap-5">
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li>
+          <a routerLink="/dashboard">{{ user.name }}</a>
+        </li>
+        <li class="relative">
+          <a routerLink="/cart-page">
+            <fa-icon [icon]="faCartShopping" class="text-red-400"></fa-icon>
+            <span
+              *ngIf="cartQuantity && isAuth"
+              class="absolute -top-1 -right-2 block bg-red-500 rounded-full px-1 text-white text-xs"
+              >{{ cartQuantity }}</span
+            >
+          </a>
+        </li>
+        <li *ngIf="isAuth" class="ml-4 cursor-pointer" (click)="logout()">
+          <fa-icon
+            [icon]="faArrowRightFromBracket"
+            class="text-red-400"
+          ></fa-icon>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,10 @@
+<div class="relative w-[25rem] md:w-[35rem] h-[26rem] z-10">
+  <button
+    *ngIf="!readonly"
+    (click)="findMyLocation()"
+    class="absolute top-0 left-0 right-0 z-50 bg-white/60 m-auto w-72 py-2 hover:bg-white/90 transition duration-300"
+  >
+    Find My Location
+  </button>
+  <div #map class="map"></div>
+</div>

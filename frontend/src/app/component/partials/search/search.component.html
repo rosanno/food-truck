@@ -1,0 +1,15 @@
+<div class="flex justify-center mb-7">
+  <div class="flex justify-between gap-3 border-b w-2/4">
+    <input
+      #s
+      type="text"
+      placeholder="Search for food..."
+      (keyup.enter)="search(s.value)"
+      [value]="searchTerm"
+      class="flex-1 focus:outline-none py-2"
+    />
+    <button (click)="search(s.value)">
+      <fa-icon [icon]="faMagnifyingGlass" class="text-gray-400"></fa-icon>
+    </button>
+  </div>
+</div>
