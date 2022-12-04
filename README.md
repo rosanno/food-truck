@@ -55,7 +55,8 @@ Angular fullstack online food ordering web app.
 3. Package Manager - NPM / Yarn
 4. Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you
 
-use **yarn** as package manager.
+use **yarn** as package manager
+
 5. Run the Server.
 
 ## Development server
